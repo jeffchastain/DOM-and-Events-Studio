@@ -6,6 +6,12 @@
     position: relative;
 }
 
+#rocket {
+    position: absolute;
+    top: 250px;
+    right: 250px;
+}
+
 #flightStatus {
     color: green;
 }
@@ -19,6 +25,8 @@
 #spaceShuttleHeight {
     display: inline-block;
 }
+
+
 
 .center-block {
     text-align: center; 

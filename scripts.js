@@ -12,6 +12,7 @@ let flightStatus = document.getElementById("flightStatus");
 let flightDisplay = document.getElementById("flightDisplay");
 let shuttleBackground = document.getElementById("shuttleBackground");
 let spaceShuttleHeight = document.getElementById("spaceShuttleHeight");
+let rocket = document.getElementById("rocket");
 
 takeOff.addEventListener("click", function(event){
     if (window.confirm("Confirm the shuttle is ready for takoff.")) {
@@ -37,25 +38,43 @@ if (window.confirm("Confirm that you want to abort the mission.")) {
 });
 
 moveUp.addEventListener("click", function(event) {
-let newHeight = parseInt(spaceShuttleHeight);
-console.log(typeof(newHeight));
-console.log(newHeight);
-newHeight += 10000;
-console.log(newHeight);
-spaceShuttleHeight.innerHTML = newHeight;
+let newHeightUp = parseInt(spaceShuttleHeight.innerHTML);
+console.log(typeof(newHeightUp));
+console.log(newHeightUp);
+newHeightUp += 10000;
+console.log(newHeightUp);
+spaceShuttleHeight.innerHTML = newHeightUp; 
+
+let rocketUp= parseInt(rocket.style.top);
+console.log(rocketUp);
+let rocketUpTen = rocketUp - 10;
+console.log(rocketUpTen);
+//rocket.style.top += rocketUp + 10;
+rocket.style.top = rocketUpTen + 'px';
 });
 
 moveDown.addEventListener("click",function(event){
-parseInt(spaceShuttleHeight);
-spaceShuttleHeight.innerHTML += 10000;
+let newHeightDown = parseInt(spaceShuttleHeight.innerHTML);
+newHeightDown -= 10000;
+spaceShuttleHeight.innerHTML = newHeightDown;
+
+let rocketDown = parseInt(rocket.style.top);
+let rocketDownTen = rocketDown + 10;
+rocket.style.top = rocketDownTen + 'px';
+
 });
 
 moveRight.addEventListener("click", function(event){
+     let rocketRight = parseInt(rocket.style.right);
+    let rocketRightTen = rocketRight - 10;
+    rocket.style.right = rocketRightTen + 'px';
 
 });
 
 moveLeft.addEventListener("click", function(event){
-
+let rocketLeft = parseInt(rocket.style.right);
+let  rocketLeftTen = rocketLeft + 10;
+rocket.style.right = rocketLeftTen + 'px';
 });
 
 };
